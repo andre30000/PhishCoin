@@ -16,6 +16,9 @@
 #include <atomic>
 #include <future>
 
+#include <boost/bind.hpp>
+
+
 #include <boost/signals2/signal.hpp>
 
 struct MainSignalsInstance {

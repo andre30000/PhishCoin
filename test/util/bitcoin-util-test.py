@@ -28,7 +28,8 @@ import sys
 def main():
     config = configparser.ConfigParser()
     config.optionxform = str
-    config.readfp(open(os.path.join(os.path.dirname(__file__), "../config.ini"), encoding="utf8"))
+    with open(os.path.join(os.path.dirname(__file__), "../config.ini"), encoding="utf8") as config_file:
+        config.read_file(config_file)
     env_conf = dict(config.items('environment'))
 
     parser = argparse.ArgumentParser(description=__doc__)

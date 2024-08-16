@@ -10,6 +10,9 @@
 #include <config/bitcoin-config.h>
 #endif
 
+#include <list>
+
+
 #include <amount.h>
 #include <coins.h>
 #include <fs.h>

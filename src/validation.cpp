@@ -44,6 +44,8 @@
 #include <future>
 #include <sstream>
 
+#include <boost/bind.hpp>
+
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/thread.hpp>
 
@@ -57,6 +59,7 @@
 /**
  * Global state
  */
+
 namespace {
     struct CBlockIndexWorkComparator
     {
