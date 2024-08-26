@@ -6,6 +6,9 @@
 #include <util.h>
 #include <utilmoneystr.h>
 
+#include <algorithm>
+#include <random>  // Include this header for std::random_device and std::mt19937
+
 // Descending order comparator
 struct {
     bool operator()(const OutputGroup& a, const OutputGroup& b) const
@@ -220,7 +223,11 @@ bool KnapsackSolver(const CAmount& nTargetValue, std::vector<OutputGroup>& group
     std::vector<OutputGroup> applicable_groups;
     CAmount nTotalLower = 0;
 
-    random_shuffle(groups.begin(), groups.end(), GetRandInt);
+    // random_shuffle(groups.begin(), groups.end(), GetRandInt);
+    std::random_device rd;
+    std::mt19937 g(rd());  // Or you can use any other random number generator
+
+    std::shuffle(groups.begin(), groups.end(), g);
 
     for (const OutputGroup& group : groups) {
         if (group.m_value == nTargetValue) {

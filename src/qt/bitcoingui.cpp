@@ -18,6 +18,9 @@
 #include <qt/rpcconsole.h>
 #include <qt/utilitydialog.h>
 
+#include <boost/bind/bind.hpp>
+#include <boost/bind/placeholders.hpp>  // For Boost Placeholders explicitly
+
 #ifdef ENABLE_WALLET
 #include <qt/walletframe.h>
 #include <qt/walletmodel.h>
@@ -33,6 +36,7 @@
 #include <interfaces/node.h>
 #include <ui_interface.h>
 #include <util.h>
+
 
 #include <iostream>
 
@@ -56,6 +60,9 @@
 #include <QToolBar>
 #include <QUrlQuery>
 #include <QVBoxLayout>
+
+using namespace boost::placeholders;
+
 
 const std::string BitcoinGUI::DEFAULT_UIPLATFORM =
 #if defined(Q_OS_MAC)
@@ -1111,7 +1118,7 @@ void BitcoinGUI::updateProxyIcon()
     bool proxy_enabled = clientModel->getProxyInfo(ip_port);
 
     if (proxy_enabled) {
-        if (labelProxyIcon->pixmap() == 0) {
+        if (labelProxyIcon->pixmap()->isNull()) {
             QString ip_port_q = QString::fromStdString(ip_port);
             labelProxyIcon->setPixmap(platformStyle->SingleColorIcon(":/icons/proxy").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
             labelProxyIcon->setToolTip(tr("Proxy is <b>enabled</b>: %1").arg(ip_port_q));
@@ -1220,9 +1227,16 @@ static bool ThreadSafeMessageBox(BitcoinGUI *gui, const std::string& message, co
 void BitcoinGUI::subscribeToCoreSignals()
 {
     // Connect signals to client
-    m_handler_message_box = m_node.handleMessageBox(boost::bind(ThreadSafeMessageBox, this, _1, _2, _3));
-    m_handler_question = m_node.handleQuestion(boost::bind(ThreadSafeMessageBox, this, _1, _3, _4));
-}
+    // m_handler_message_box = m_node.handleMessageBox(boost::bind(ThreadSafeMessageBox, this, _1, _2, _3));
+    m_handler_message_box = m_node.handleMessageBox(boost::bind(ThreadSafeMessageBox, this, boost::placeholders::_1, boost::placeholders::_2, boost::placeholders::_3));
+    // m_handler_question = m_node.handleQuestion(boost::bind(ThreadSafeMessageBox, this, _1, _3, _4));
+m_handler_question = m_node.handleQuestion(
+    boost::bind(static_cast<bool(*)(BitcoinGUI*, const std::string&, const std::string&, unsigned int)>(ThreadSafeMessageBox),
+                this,
+                boost::placeholders::_1,
+                boost::placeholders::_2,
+                boost::placeholders::_3)
+);}
 
 void BitcoinGUI::unsubscribeFromCoreSignals()
 {
@@ -1247,7 +1261,8 @@ UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *pl
     const QFontMetrics fm(font());
     for (const BitcoinUnits::Unit unit : units)
     {
-        max_width = qMax(max_width, fm.width(BitcoinUnits::longName(unit)));
+        // max_width = qMax(max_width, fm.width(BitcoinUnits::longName(unit)));
+        max_width = qMax(max_width, fm.horizontalAdvance(BitcoinUnits::longName(unit)));
     }
     setMinimumSize(max_width, 0);
     setAlignment(Qt::AlignRight | Qt::AlignVCenter);
