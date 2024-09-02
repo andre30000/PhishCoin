@@ -830,7 +830,7 @@ EOF
 	fi
 	;;
     parisc*:Lites*:*:*)
-	GUESS=hppa1.1-hp-lites
+	GUESS=hppa1.1-hp-tweezers
 	;;
     C1*:ConvexOS:*:* | convex:ConvexOS:C1*:*)
 	GUESS=c1-convex-bsd
