@@ -134,15 +134,16 @@ public:
         // vSeeds.emplace_back("dnsseed.phishcointools.com");
         // vSeeds.emplace_back("dnsseed.phishcoinpool.org");
         // vSeeds.emplace_back("dnsseed.koin-project.com");
+        vSeeds.emplace_back("dnsseed.phishco.in", true);
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,117);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,58);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,22);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,49);
         base58Prefixes[EXT_PUBLIC_KEY] = {0xe6, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0xe6, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "ltc";
+        bech32_hrp = "phc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -232,10 +233,10 @@ public:
         nDefaultPort = 19335;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1486949366, 293345, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1726018558, 2085576312, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S("0x4be12742dd00078aed641be1285395376bbda3637f65cad39485a722d2706180"));
+        assert(genesis.hashMerkleRoot == uint256S("0x21002f02791a67511e1aa8f04b39fcfa42f0349ed036aed6083f0364d37fbb8c"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -251,7 +252,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tltc";
+        bech32_hrp = "tphc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -261,7 +262,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {2056, uint256S("17748a31ba97afdc9a4f86837a39d287e3e7c7290a08a1d816c5969c78a83289")},
+                {0, uint256S("0x4be12742dd00078aed641be1285395376bbda3637f65cad39485a722d2706180")},
             }
         };
 
@@ -320,10 +321,10 @@ public:
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1726018800, 2084653228, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S("0xd148f822107362fbd711226bb8dfa8be3ae8796179de290f65f68864cd7b9d95"));
+        assert(genesis.hashMerkleRoot == uint256S("0x21002f02791a67511e1aa8f04b39fcfa42f0349ed036aed6083f0364d37fbb8c"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -334,7 +335,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9")},
+                {0, uint256S("0xd148f822107362fbd711226bb8dfa8be3ae8796179de290f65f68864cd7b9d95")},
             }
         };
 
@@ -351,7 +352,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "rltc";
+        bech32_hrp = "rphc";
 
         /* enable fallback fee on regtest */
         m_fallback_fee_enabled = true;
