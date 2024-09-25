@@ -4,6 +4,7 @@ Phishcoin Core integration/staging tree
 [![Build Status](https://travis-ci.org/phishcoin-project/phishcoin.svg?branch=master)](https://travis-ci.org/phishcoin-project/phishcoin)
 
 https://phishcoin.org
+v1.01-x86_compatible testing
 
 What is Phishcoin?
 ----------------
