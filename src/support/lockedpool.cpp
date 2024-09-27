@@ -27,6 +27,7 @@
 #endif
 
 #include <algorithm>
+#include <stdexcept> // Include the missing header for std::runtime_error
 
 LockedPoolManager* LockedPoolManager::_instance = nullptr;
 std::once_flag LockedPoolManager::init_flag;
