@@ -1235,7 +1235,7 @@ void BitcoinGUI::subscribeToCoreSignals()
     // m_handler_question = m_node.handleQuestion(boost::bind(ThreadSafeMessageBox, this, _1, _3, _4));
            // line replaced with code from Litecoin v0.18
     m_handler_question = m_node.handleQuestion(std::bind(ThreadSafeMessageBox, this, std::placeholders::_1, std::placeholders::_3, std::placeholders::_4));
-
+}
 
 void BitcoinGUI::unsubscribeFromCoreSignals()
 {
