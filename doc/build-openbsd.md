@@ -1,5 +1,8 @@
 OpenBSD build guide
 ======================
+PHISHCOIN HAS BEEN TESTED ON THIS AND MAY OR MAY NOT WORK
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN
+======================
 (updated for OpenBSD 6.3)
 
 This guide describes how to build phishcoind and command-line utilities on OpenBSD.
