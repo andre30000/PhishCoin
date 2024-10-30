@@ -1,4 +1,8 @@
 # Block and Transaction Broadcasting with ZeroMQ
+======================
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+ZMQ HAS NOT BEEN TESTED WITH PHISHCOIN
+======================
 
 [ZeroMQ](http://zeromq.org/) is a lightweight wrapper around TCP
 connections, inter-process communication, and shared-memory,

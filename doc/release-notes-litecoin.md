@@ -1,3 +1,5 @@
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN WITH A FIND/REPLACE AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+======================
 Phishcoin Core version 0.17.1 is now available from:
 
   <https://download.phishcoin.org/phishcoin-0.17.1/>

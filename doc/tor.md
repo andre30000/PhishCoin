@@ -1,4 +1,7 @@
 # TOR SUPPORT IN LITECOIN
+======================
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+======================
 
 It is possible to run Phishcoin Core as a Tor hidden service, and connect to such services.
 

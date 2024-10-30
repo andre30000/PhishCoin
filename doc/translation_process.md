@@ -1,5 +1,8 @@
 Translations
 ============
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+PHISHCOIN HAS BEEN TRANSLATED TO ANY LANGUAGE OTHER THAN LIZARD
+======================
 
 The Bitcoin-Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Bitcoin-Core makes use of the Transifex online translation management tool.
 

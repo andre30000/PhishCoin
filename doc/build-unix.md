@@ -1,6 +1,16 @@
 UNIX BUILD NOTES
 ====================
 Some notes on how to build Phishcoin Core in Unix.
+The instructions below are taken from Litecoin and should also be used for PhishCoin.
+Phishcoin has been tested and verified working on the following:
+ - Ubuntu 24.xx on x86 (node only - no wallet, no GUI. Those should work though)
+ - Linux Mint 22 on x86 (full build) 
+====================
+PHISHCOIN SPECIFIC NOTE:
+apt-get boost packages will default to install Boost 1.83 which has a bug that won't compile
+Phishcoin!! It will fail!! Phishcoin has been verified to use Boost 1.86. Other versions may work
+For more info on installing boost 1.86, chatgpt is v useful
+====================
 
 (For BSD specific instructions, see `build-*bsd.md` in this directory.)
 

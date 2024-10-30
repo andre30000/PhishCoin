@@ -1,6 +1,10 @@
 FreeBSD build guide
 ======================
+PHISHCOIN HAS BEEN TESTED ON THIS AND MAY OR MAY NOT WORK
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN
+======================
 (updated for FreeBSD 11.1)
+
 
 This guide describes how to build phishcoind and command-line utilities on FreeBSD.
 

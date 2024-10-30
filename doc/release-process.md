@@ -1,5 +1,7 @@
 Release Process
 ====================
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+======================
 
 Before every release candidate:
 

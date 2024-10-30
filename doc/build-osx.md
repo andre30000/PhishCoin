@@ -1,5 +1,37 @@
 macOS Build Instructions and Notes
 ====================================
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN 
+These should apply to macos build, however, this has only been tested WITHOUT GUI on MacOS 15 Sequoia on M2 Apple silicon (ARM - such as M1, M2, etc.)
+highly recommend using the following build commands if you are on ARM:
+
+FULL BUILD:
+./autogen.sh
+export BOOST_ROOT=/opt/homebrew/opt/boost
+export CXXFLAGS="-std=c++17"
+./configure
+make HOST=arm-apple-darwin23 
+
+?-?-?-?-?-?-?
+Did you get an error that says 'no working boost sleep implementation found'? Then run:
+./configure --with-boost=$BOOST_ROOT
+?-?-?-?-?-?-?
+
+Node and wallet only:
+./autogen.sh
+export BOOST_ROOT=/opt/homebrew/opt/boost
+export CXXFLAGS="-std=c++17"
+./configure --without-gui
+make HOST=arm-apple-darwin23 
+(replace make HOST="your darwin version")
+
+NOTE: sometimes it may still try to build the GUI, if so, use this
+./autogen.sh
+export BOOST_ROOT=/opt/homebrew/opt/boost
+export CXXFLAGS="-std=c++17"
+Export qt5_prefix=“”
+./configure --without-gui
+make HOST=arm-apple-darwin23
+======================
 The commands in this guide should be executed in a Terminal application.
 The built-in one is located in `/Applications/Utilities/Terminal.app`.
 

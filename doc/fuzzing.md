@@ -1,5 +1,7 @@
 Fuzz-testing Phishcoin Core
 ==========================
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+======================
 
 A special test harness `test_phishcoin_fuzzy` is provided to provide an easy
 entry point for fuzzers and the like. In this document we'll describe how to

@@ -1,5 +1,8 @@
 WINDOWS BUILD NOTES
 ====================
+PHISHCOIN HAS BEEN TESTED ON WINDOWS AND MAY OR MAY NOT WORK
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN
+======================
 
 Below are some notes on how to build Phishcoin Core for Windows.
 

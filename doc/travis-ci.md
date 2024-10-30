@@ -1,5 +1,7 @@
 Travis CI
 =========
+THE BELOW INSTRUCTIONS ARE FROM LITECOIN AND MAY OR MAY NOT APPLY OR BE FUNCTIONAL
+======================
 
 Support for using travis-ci has been added in order to automate pull-testing.
 See [travis-ci.org](https://travis-ci.org/) for more info
